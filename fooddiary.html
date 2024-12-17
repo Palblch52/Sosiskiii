@@ -1,0 +1,104 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/style.css">  
+    <title>Palblch FIT</title>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+</head>  
+<body>  
+    <header>  
+        <div class="logo">Palblch <br>FIT</div>  
+        <div class="phone">  
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">  
+                <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/>  
+            </svg>  
+            <div class="number">8(800)5553535</div>  
+        </div>  
+    </header>  
+    <div class="navigation">  
+        <a href="fooddiary.html" class="nav-item">Дневник питания</a>  
+        <a href="index.html" class="nav-item">О нас</a>  
+        <a href="makediet.html" class="nav-item">Добавление продукта</a>  
+    </div>  
+
+    <main class="diary container my-4">  
+        <h1>Калькулятор дневной нормы калорий</h1>  
+
+        <div class="form-group">  
+            <label for="age">Возраст:</label>  
+            <input type="number" class="form-control" id="age" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="weight">Вес (кг):</label>  
+            <input type="number" class="form-control" id="weight" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="height">Рост (см):</label>  
+            <input type="number" class="form-control" id="height" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label>Пол:</label>  
+            <select class="form-control" id="gender">  
+                <option value="male">Мужской</option>  
+                <option value="female">Женский</option>  
+            </select>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="activity">Уровень активности:</label>  
+            <select class="form-control" id="activity">  
+                <option value="1.2">Малоподвижный образ жизни</option>  
+                <option value="1.375">Легкая активность (1-3 раза в неделю)</option>  
+                <option value="1.55">Средняя активность (3-5 раз в неделю)</option>  
+                <option value="1.725">Высокая активность (6-7 раз в неделю)</option>  
+                <option value="1.9">Очень высокая активность (ежедневно + тяжелые тренировки)</option>  
+            </select>  
+        </div>  
+
+        <button class="btn btn-success my-2" onclick="calculateCalories()">Рассчитать</button>  
+
+        <div id="results" class="my-4"></div>  
+
+        <h2>Добавить продукт в дневник питания</h2>  
+        <form id="foodDiaryForm" class="form-inline my-2">  
+            <div class="form-group mr-2">  
+                <label for="foodProduct" class="sr-only">Продукт:</label>  
+                <input type="text" class="form-control" id="foodProduct" placeholder="Введите название продукта" required>  
+            </div>  
+            <div class="form-group mr-2">  
+                <label for="foodDate" class="sr-only">Дата:</label>  
+                <input type="date" class="form-control" id="foodDate" required>  
+            </div>  
+            <div class="form-group mr-2">  
+                <label for="foodCalories" class="sr-only">Калории:</label>  
+                <input type="number" class="form-control" id="foodCalories" placeholder="Калории" required>  
+            </div>  
+            <button type="button" class="btn btn-success" onclick="addFoodItem()">Добавить</button>  
+        </form>  
+
+        <h2>Ваши продукты</h2>  
+        <table class="table table-bordered">  
+            <thead>  
+                <tr>  
+                    <th>Дата</th>  
+                    <th>Продукт</th>  
+                    <th>Калории</th>  
+                    <th>Действия</th>  
+                </tr>  
+            </thead>  
+            <tbody id="foodDiaryList">  
+                <!-- Сюда будут добавлены продукты -->  
+            </tbody>  
+        </table>  
+    </main>  
+
+    <script src="js/script.js"></script>  
+</body>  
+</html>
